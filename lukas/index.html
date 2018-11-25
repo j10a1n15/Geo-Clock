@@ -1,0 +1,65 @@
+<html>
+
+<head>
+    <meta charset="uft8" />
+    <title>
+        Geo-Clock
+    </title>
+</head>
+
+<body>
+    <h1> <u> Geo-Clock </u> </h1>
+    <p> In diesem Projekt versuchen wir einen Wecker zu machen.
+        Doch ein Standart Wecker ist langweilig.
+        Deswegen wird unser Wecker nicht nach Zeit sondern nach <b>Ort</b> gestellt. </p>
+    <img src="jugend_hackt_nord.jpg"> <br />
+    <h2>Features</h2>
+    <ul>
+        <li>Ort Wecker </li>
+        <li>Map</li>
+        <li>Gutes Design</li>
+        <li>Bei Verspätungen weiterschlafen</li>
+        <li>Ort suchen
+        </li>
+    </ul> <iframe height="280" width="400" src="https://www.openstreetmap.org/export/embed.html?bbox=9.99022,48.3964"
+        id="Map">
+    </iframe>
+    <input list="Haltestelle" id="inputfeld" type="search">
+    <datalist id="Haltestelle">
+        <option value="Justizgebäude">
+        <option value="Ehinger Tor">
+        <option value="Haupt Bahnhof">
+        <option value="Ulm Ost">
+        <option value="Rathaus">
+        <option value="Steinerne Brücke">
+        <option value="Söflingen">
+    </datalist>
+    <input type="button" value="Suchen" id="Button_Suchen">
+    <audio src="alarm.mp3" id="Audio"></audio>
+    <script>
+        var coords = {
+            "Justizgebäude": "9.992995,48.401942",
+            "Ehinger Tor": "9.980483,48.394404",
+            "Haupt Bahnhof": "9.983336,48.399172",
+            "Ulm Ost": "9.994621,48.407077",
+            "Rathaus": "9.994978,48.397016",
+            "Steinerne Brücke": "9.988201,48.397177",
+            "Söflingen": "9.955188,48.394941"
+        };
+        var btnsearch = document.getElementById("Button_Suchen");
+        btnsearch.addEventListener("click", (e) => {
+            console.log(e);
+            var input = document.getElementById("inputfeld").value;
+            console.log(input);
+            var Map = document.getElementById("Map")
+            var Adresse = "https://www.openstreetmap.org/export/embed.html?bbox=" + (coords[input])
+            Map.src = Adresse
+            var Audio = document.getElementById("Audio")
+            setTimeout(() => {
+                Audio.play()
+
+            }, 5000);
+        })</script>
+</body>
+
+</html>
