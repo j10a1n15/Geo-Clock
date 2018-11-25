@@ -1,0 +1,63 @@
+<html>
+
+<head>
+    <title>
+        Geo-Clock
+    </title>
+    <meta charset="utf8" />
+</head>
+
+<body>
+    <h1> Hallo<u> Welt!</u></h1>
+    <p> In diesem <i>Pojekt stellen</i> wir
+        ein Wecker nach <b>Ort</b> und <b>Zeit</b>. </p>
+    <br /><img src="Okay!!!!!!.jpg">
+    <input type="checkbox">HaHa!<input type="search">
+    <ul>
+        <li>Features 1 nie wieder bahnhof verschlafen</li>
+        <lci>Features 2 lange klingel zum aufstehen</li>
+            <li>Features 3 laute klingel</li>
+    </ul>
+    <iframe id="Karte" height="300" width="450" src="https://www.openstreetmap.org/export/embed.html?bbox=9.99022,48.3964">
+
+    </iframe>
+    <input list="browsers" id="HAHA" type="search">
+
+    <datalist id="browsers">
+        <option value="Ehinger Tor">
+        <option value="Justizgebäude">
+        <option value="Haupt Bahnhof">
+        <option value="Ulm Ost">
+        <option value="Rathaus">
+       <!-- <option value="Söflingen">-->
+        <option value="Steinerne Brücke"></option>
+    </datalist>
+    <input type="button" value="suchen" id="btn-search">
+<audio src="alarm.mp3" id="ALARMMM WECKER!"></audio>
+    <script>
+        var coords = {
+            "Ehinger Tor": "9.980819,48.394783",
+            "Justizgebäude": "9.992997,48.401936",
+            "Haupt Bahnhof": "9.983336,48.399175",
+            "Ulm Ost": "9.994523,48.407118",
+            "Rathaus": "9.993283,48.397016",
+            "Steinerne Brücke": "9.9881897,48.397179",
+           //"Söflingen":"9.99025,48.39643"
+        };
+        var buttonSearch = document.getElementById("btn-search");
+        buttonSearch.addEventListener("click", () => {
+            var Haltestelle = document.getElementById("HAHA").value;
+            alert(Haltestelle);
+            alert(coords[Haltestelle]);
+            var Karte = document.getElementById("Karte");
+            var url = "https://www.openstreetmap.org/export/embed.html?bbox="+coords[Haltestelle];
+            Karte.setAttribute("src",url);
+var ALARMMM = document.getElementById("ALARMMM WECKER!");
+
+setTimeout(()=>{ALARMMM.play();},5000);
+        });
+        console.log("Hallo Welt");
+    </script>
+</body>
+
+</html>
