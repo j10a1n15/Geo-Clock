@@ -1,0 +1,87 @@
+<html>
+
+<head>
+    <title>
+        geo-clock
+    </title>
+    <meta charset="2utf8">
+</head>
+
+<body>
+    Geo-clock (wer das liest ist dumm(habe dich erwischt lul))
+    <h1> warum liest du die sachen die ich schreibe?</h1>
+    <p>mit unserer <i><u><b>geo clock</u></b></i> kannst du im zug schlafen und wirst pünktlich aufgeweckt
+
+    </p>
+    <ul>
+        <li>
+            einfafach Nadel darauf setzen
+        </li>
+        <li>
+            schlaffen ohne sorgen
+        </li>
+        <li>
+            ich bin unkreativ HILFE
+        </li>
+    </ul>
+    <br />wenn du das problem nicht kennst gÜh weg!!!!
+    <img src="wer das liest ist dumm.jpg">
+    <input type="button" value="search" id="bu1_search">
+
+    <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=9.99022,48.3964" height="300" width="500" id="map" ></iframe>
+    
+    <input list="browsers" id="stationen">
+
+    <datalist id="browsers">
+        <option value="Hauptbahnhof">
+        <option value="Steinerne Brücke">
+        <option value="Söflingen">
+        <option value="Ulm Ost">
+        <option value="Rathaus">
+        <option value="Justizgebäude">
+        <option value="Ehinger Tor">
+
+    </datalist>
+    <audio src= "alarm.mp3" id="audiofeld" >
+
+    </audio>
+
+    <script>
+        console.log("wer das liest ist dumm hab dich erwisch lol");
+
+        var coords = {
+            "Hauptbahnhof": "9.983336,48.39917",
+            "Justizgebäude": "9.992997,48.401936",
+            "Ehinger Tor": "9.980819,48.394783",
+            "Ulm Ost": "9.994523,48.407118",
+            "Rathaus": "9.993283,48.397016",
+            "Söflingen": "9.555008,48.354855",
+            "Steinerne Brücke": "9.988197,48.397179"
+
+        };
+
+
+        var btnsearch = document.getElementById("bu1_search");
+        btnsearch.addEventListener("click",
+            (e) => {
+                console.log(e);
+                var haltestelle = document.getElementById("stationen").value
+                console.log(haltestelle)
+                alert(coords[haltestelle])
+                var map= document.getElementById("map")
+    var adresse =  "https://www.openstreetmap.org/export/embed.html?bbox=" + (coords[haltestelle])
+map.src = adresse
+var audiofeld=document.getElementById("audiofeld")
+audiofeld.play()
+setTimeout(()=>{
+
+alarm.play()
+},
+150000)
+            });
+   
+</script>
+
+</body>
+
+</html>
